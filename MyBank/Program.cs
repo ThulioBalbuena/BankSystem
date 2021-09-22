@@ -1,33 +1,47 @@
 ﻿using System;
 
-namespace MyBankdot
+
+
+namespace myBank
+
 {
+
     class Program
+
     {
+
         static void Main(string[] args)
+
         {
-            ContaCorrente contaTui = new ContaCorrente("Thulio", 1234, 213, 142);
-            ContaCorrente contaMila = new ContaCorrente("Camila", 4234, 13, 643);
+            ContaCorrente contaDaMila = new ContaCorrente("Mila", 1234, 100);
 
-            Console.WriteLine("o titular é " + contaTui.titular);
-            Console.WriteLine("o titular é " + contaMila.titular);
+            contaDaMila.Conta = 789;
 
-            contaTui.Sacar(100);
-            contaMila.Sacar(200);
 
-            Console.WriteLine("o seu saldo é " + contaTui.saldo);
-            Console.WriteLine("o seu saldo é " + contaMila.saldo);
 
-            contaTui.Depositar(250);
-            contaMila.Depositar(350);
+            ContaCorrente contaDoTui = new ContaCorrente("Tui", 1234, 120);
 
-            Console.WriteLine("o seu saldo é " + contaTui.saldo);
-            Console.WriteLine("o seu saldo é " + contaMila.saldo);
+            ContaCorrente contaDaKiki = new ContaCorrente("Kiki", 1234, 150);
 
-            contaTui.Transferir(250, contaMila);
+            contaDoTui.Conta = 302;
 
-            Console.WriteLine("o seu saldo depois da transferência é " + contaMila.saldo);
+
+
+
+            contaDaMila.Sacar (100);
+
+           
+
+            Console.WriteLine("O número da conta da Mila é: " + contaDaMila.Conta);
+
+            Console.WriteLine("O saldo da conta da Mila é: " + contaDaMila.Saldo);
+
+            Console.WriteLine("O número da conta do Tui é: " + contaDoTui.Conta);
+
+            Console.WriteLine("O saldo da conta do Tui é: " + contaDoTui.Saldo);
 
         }
+
     }
+
 }

@@ -1,37 +1,108 @@
 public class ContaCorrente{
-   public string titular;
-   public int agencia;
-   public int senha;
-   public double saldo;
 
-        public ContaCorrente(string t_titular,int a_agencia,int s_senha,double s_saldo)
-        {
-            titular = t_titular;
-            agencia = a_agencia;
-            senha = s_senha;
-            saldo = s_saldo;
-}          
-        public bool Sacar(double Valor){
-            if(this.saldo < Valor){
-                return false;
-            }
-            else{
-                this.saldo -= Valor;
-                return true;
-            }
-        }
-        public void Depositar(double Valor){
-            this.saldo += Valor;
+    
+
+    public string Titular { get; set; }
+
+    public int Agencia { get; set; }
+
+    public int Conta { get; set; }
+
+
+
+    private double _saldo; 
+
+
+
+    public double Saldo { 
+
+        get{
+
+            return this._saldo;
+
         }
 
-        public bool Transferir(double Valor,ContaCorrente contaDestino){
-            if(this.saldo < Valor){
-                return false;
+        set{
+
+            if (value >= 0){
+
+                this._saldo = value;
+
             }
-            else{
-                this.Sacar(Valor);
-                contaDestino.Depositar(Valor);
-                return true;
-            }
+
+        } 
+
+    }
+
+
+
+    public ContaCorrente() {}
+
+
+
+    public ContaCorrente(string contacorrente_titular, int contacorrente_agencia, double contacorrente_saldo)
+
+    { 
+
+        Titular = contacorrente_titular;
+
+        Agencia = contacorrente_agencia;
+
+        Saldo = contacorrente_saldo;
+
+    }
+
+
+
+    public bool Sacar (double valor){
+
+        if(this.Saldo < valor){
+
+            return false;
+
         }
+
+        else{
+
+            this.Saldo -= valor;
+
+            return true;
+
+        }
+
+    }
+
+
+
+    public void Depositar (double valor){
+
+        this.Saldo += valor;
+
+    }
+
+
+
+    public bool Transferir (double valor, ContaCorrente contaDestino){
+
+        if (this.Saldo < valor){
+
+            return false;
+
+        }
+
+        else{
+
+            this.Sacar(valor);
+
+            contaDestino.Depositar(valor);
+
+            return true;
+
+        }
+
+    }
+
+
+
+
 }
