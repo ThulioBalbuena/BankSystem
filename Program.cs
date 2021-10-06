@@ -6,15 +6,20 @@ namespace BancoOO
     {
         static void Main(string[] args)
         {
-            Funcionario funcionarioTui = new Funcionario("Tui", "123.123.123-13", "Vendedor", 2300);
-            Funcionario funcionarioMila = new Funcionario("Mila", "321.321.321-23", "Vendedor", 2300);
-            Funcionario funcionarioKiki = new Funcionario("Kiki", "321.123.321-27", "Vendedor", 2300);
+            Funcionario funcionarioTui = new Funcionario("Tui", "123.123.123-13", "Vendedor", 2300, 1);
+            Funcionario funcionarioMila = new Funcionario("Mila", "321.321.321-23", "Vendedor", 2300,1 );
+            Funcionario funcionarioKiki = new Funcionario("Kiki", "321.123.321-27", "Vendedor", 2300, 1);
 
 
             Contas contaRogerina = new Contas("Tui", 1239, 977, 230, funcionarioTui);
             Contas contaRogerino = new Contas("Mila", 1312, 977, 130, funcionarioMila);
             Contas contaRoger = new Contas("Kiki", 2840, 457, 112, funcionarioKiki);
 
+            funcionarioTui.Bonificacao = funcionarioTui.Salario;
+            funcionarioMila.Bonificacao = funcionarioMila.Salario;
+            funcionarioKiki.Bonificacao = funcionarioKiki.Salario;
+
+            Console.WriteLine("Bonificação da Kiki: R$" + funcionarioKiki.Bonificacao);
             Console.WriteLine("O número de conta(s) criada(s) é: " + Contas.ContasCriadas);
 
             Console.WriteLine("Saldo inicial de Lúcifer é " + contaRogerina.Saldo + ". Conta vendida por " + funcionarioTui.Nome + ", que recebeu comissão de " + funcionarioTui.Comissao);
