@@ -1,2 +1,2 @@
-# BankSystem
-Projeto de programação orientada a objeto - banco
+# Bank_OO
+Projeto de programação orietada a objeto - banco.
