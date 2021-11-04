@@ -32,17 +32,17 @@ namespace myBank
 
             vendedorJason.Bonificacao = vendedorJason.Salario;
 
-            ContaCorrente contaDoThulio = new ContaCorrente("Thúlio", 4324, 2000, vendedorJason);
-            contaDoThulio.Conta = 329;
+            ContaCorrente contaDoThulioBalbuenaDionisio = new ContaCorrente("Thúlio Balbuena Dionísio", 4324, 2000, vendedorJason);
+            contaDoThulioBalbuenaDionisio.Conta = 329;
             ContaCorrente contaDaMila = new ContaCorrente("Mila", 1534, 420, vendedorJason);
             contaDaMila.Conta = 659;
             ContaCorrente contaDaKiki = new ContaCorrente("Kiki", 5678, 24050, vendedorBruce);
             contaDaKiki.Conta = 323;
 
             Console.WriteLine("As contas são:");
-            Console.WriteLine("Conta 1:\nNome: " + contaDoThulio.Titular +
-            "\nAgência: " + contaDoThulio.Agencia +
-            "\nSaldo: " + contaDoThulio.Saldo);
+            Console.WriteLine("Conta 1:\nNome: " + contaDoThulioBalbuenaDionisio.Titular +
+            "\nAgência: " + contaDoThulioBalbuenaDionisio.Agencia +
+            "\nSaldo: " + contaDoThulioBalbuenaDionisio.Saldo);
 
             Console.WriteLine("\nConta 2:\nNome: " + contaDaMila.Titular +
             "\nAgência: " + contaDaMila.Agencia +
@@ -79,10 +79,10 @@ namespace myBank
             contaDaMila.Depositar(1000);
             Console.WriteLine("O saldo da conta da Mila é: " + contaDaMila.Saldo);
 
-            Console.WriteLine("\nTransferir R$650,00 da conta da Kiki para a conta do Thúlio.");
-            contaDaKiki.Transferir(650, contaDoThulio);
+            Console.WriteLine("\nTransferir R$650,00 da conta da Kiki para a conta do Thúlio Balbuena Dionísio.");
+            contaDaKiki.Transferir(650, contaDoThulioBalbuenaDionisio);
             Console.WriteLine("O saldo da conta da Kiki é: " + contaDaKiki.Saldo);
-            Console.WriteLine("O saldo da conta do Thúlio é: " + contaDoThulio.Saldo);
+            Console.WriteLine("O saldo da conta do Thúlio Balbuena Dionísio é: " + contaDoThulioBalbuenaDionisio.Saldo);
 
             Console.WriteLine("\nO número de contas criadas é: " + ContaCorrente.TotaldeContasCriadas);
         }

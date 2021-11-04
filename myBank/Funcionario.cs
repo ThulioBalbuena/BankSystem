@@ -14,7 +14,7 @@ public abstract class Funcionario : PessoaFisica
         }
         set
         {
-            _bonificacao += Salario * 0.01;
+            _bonificacao += Salario * 0.02;
         }
     }
 
