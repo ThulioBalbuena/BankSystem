@@ -1,90 +1,94 @@
 ﻿using System;
 
-namespace myBank
+namespace CS_BankSystem
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Gerente gerenteCypher = new Gerente()
+            Gerente gerenteDexStarr = new Gerente()
             {
-                Nome = "Cypher Indra",
-                CPF = "877.123.749-51",
-                Salario = 5000,
-                NumeroDeAgencias = 5,
+                Nome = "Dex-Starr",
+                CPF = "425.238.556-34",
+                Salario = 10000,
+                NumeroDeAgencias = 2,
             };
 
-            Vendedor vendedorBruce = new Vendedor()
+            Vendedor vendedorCamila = new Vendedor()
             {
-                Nome = "Bruce",
-                CPF = "153.856.724-10",
-                Salario = 2000,
-                NumeroClientesAtendidos = 5,
-            };
-
-            Vendedor vendedorJason = new Vendedor()
-            {
-                Nome = "Jason",
-                CPF = "598.165.232-30",
+                Nome = "Camila Ellen",
+                CPF = "123.556.139-12",
                 Salario = 2000,
                 NumeroClientesAtendidos = 3,
             };
 
-            vendedorJason.Bonificacao = vendedorJason.Salario;
+            Vendedor vendedorKiara = new Vendedor()
+            {
+                Nome = "Kiara",
+                CPF = "109.876.543-11",
+                Salario = 3000,
+                NumeroClientesAtendidos = 8,
+            };
 
-            ContaCorrente contaDoThulioBalbuenaDionisio = new ContaCorrente("Thúlio Balbuena Dionísio", 4324, 2000, vendedorJason);
-            contaDoThulioBalbuenaDionisio.Conta = 329;
-            ContaCorrente contaDaMila = new ContaCorrente("Mila", 1534, 420, vendedorJason);
-            contaDaMila.Conta = 659;
-            ContaCorrente contaDaKiki = new ContaCorrente("Kiki", 5678, 24050, vendedorBruce);
-            contaDaKiki.Conta = 323;
+            Vendedor vendedorVorus = new Vendedor()
+            {
+                Nome = "Vorus",
+                CPF = "591.643.22-11",
+                Salario = 4000,
+                NumeroClientesAtendidos = 12,
+            };
 
-            Console.WriteLine("As contas são:");
-            Console.WriteLine("Conta 1:\nNome: " + contaDoThulioBalbuenaDionisio.Titular +
-            "\nAgência: " + contaDoThulioBalbuenaDionisio.Agencia +
-            "\nSaldo: " + contaDoThulioBalbuenaDionisio.Saldo);
+            vendedorKiara.Bonificacao = vendedorKiara.Salario;
+            vendedorCamila.Bonificacao = vendedorCamila.Salario;
+            gerenteDexStarr.Bonificacao = gerenteDexStarr.Salario;
+            vendedorVorus.Bonificacao = vendedorVorus.Salario;
 
-            Console.WriteLine("\nConta 2:\nNome: " + contaDaMila.Titular +
-            "\nAgência: " + contaDaMila.Agencia +
-            "\nSaldo: " + contaDaMila.Saldo);
+            ContaCorrente contaThulio = new ContaCorrente("Thulio Balbuena Dionisio", 4421, 15000, vendedorVorus);
+            contaThulio.Conta = 789;
+            ContaCorrente contaVeiga = new ContaCorrente("Veiga", 4248, 12000, vendedorKiara);
+            contaVeiga.Conta = 789;
+            ContaCorrente contaMiucha = new ContaCorrente("Miucha", 0562, 20000, vendedorCamila);
+            contaMiucha.Conta = 123;
 
-            Console.WriteLine("\nConta 3:\nNome: " + contaDaKiki.Titular +
-            "\nAgência: " + contaDaKiki.Agencia +
-            "\nSaldo: " + contaDaKiki.Saldo);
+            Console.WriteLine("Contas:\n");
+            Console.WriteLine("Conta 1:\nNome: " + contaThulio.Titular +
+            "\nAgência: " + contaThulio.Agencia +
+            "\nSaldo: " + contaThulio.Saldo);
 
-            Console.WriteLine("\nOs funcinários são:");
-            Console.WriteLine("Funcionario 1:\nNome: " + vendedorBruce.Nome +
-            "\nCPF: " + vendedorBruce.CPF + "\nSalário: " + vendedorBruce.Salario +
-            "\nComissão: " + vendedorBruce.Comissao + "\nBonificação: " + vendedorBruce.Bonificacao +
-            "\nDias de férias: " + vendedorBruce.CalcularFerias() +
-            "\nRemuneração total: " + vendedorBruce.RemuneracaoTotal(vendedorBruce.Salario));
+            Console.WriteLine("\nConta 2:\nNome: " + contaVeiga.Titular +
+            "\nAgência: " + contaVeiga.Agencia +
+            "\nSaldo: " + contaVeiga.Saldo);
 
-            Console.WriteLine("\nFuncionario 2:\nNome: " + vendedorJason.Nome +
-            "\nCPF: " + vendedorJason.CPF + "\nSalário: " + vendedorJason.Salario +
-            "\nComissão: " + vendedorJason.Comissao + "\nBonificação: " + vendedorJason.Bonificacao +
-            "\nDias de férias: " + vendedorJason.CalcularFerias() +
-            "\nRemuneração total: " + vendedorJason.RemuneracaoTotal(vendedorJason.Salario, vendedorJason.Bonificacao));
+            Console.WriteLine("\nConta 3:\nNome: " + contaMiucha.Titular +
+            "\nAgência: " + contaMiucha.Agencia +
+            "\nSaldo: " + contaMiucha.Saldo);
 
-            Console.WriteLine("\nGerente:\nNome: " + gerenteCypher.Nome +
-            "\nCPF: " + gerenteCypher.CPF + "\nSalário: " + gerenteCypher.Salario +
-            "\nComissão: " + gerenteCypher.Comissao + "\nBonificação: " + gerenteCypher.Bonificacao +
-            "\nDias de férias: " + gerenteCypher.CalcularFerias() +
-            "\nRemuneração total: " + gerenteCypher.RemuneracaoTotal(gerenteCypher.Salario));
+            Console.WriteLine("\n---------------------\nFuncinários:\n");
+            Console.WriteLine("Vendedor 1:\nNome: " + vendedorCamila.Nome +
+            "\nCPF: " + vendedorCamila.CPF + "\nSalário: " + vendedorCamila.Salario +
+            "\nBonificação: " + vendedorCamila.Bonificacao +
+            "\nDias de férias: " + vendedorCamila.CalcularFerias() +
+            "\nRemuneração total: " + vendedorCamila.RemuneracaoTotal(vendedorCamila.Salario, vendedorCamila.Bonificacao));
 
-            Console.WriteLine("\nSacar R$200,00 da conta da Kiki.");
-            contaDaKiki.Sacar(200);
-            Console.WriteLine("O saldo da conta da Kiki é: " + contaDaKiki.Saldo);
+            Console.WriteLine("\nVendedor 2:\nNome: " + vendedorKiara.Nome +
+            "\nCPF: " + vendedorKiara.CPF + "\nSalário: " + vendedorKiara.Salario +
+            "\nBonificação: " + vendedorKiara.Bonificacao +
+            "\nDias de férias: " + vendedorKiara.CalcularFerias() +
+            "\nRemuneração total: " + vendedorKiara.RemuneracaoTotal(vendedorKiara.Salario, vendedorKiara.Bonificacao));
 
-            Console.WriteLine("\nDepositar R$1000,00 na conta da Mila.");
-            contaDaMila.Depositar(1000);
-            Console.WriteLine("O saldo da conta da Mila é: " + contaDaMila.Saldo);
+            Console.WriteLine("\nVendedor 3:\nNome: " + vendedorVorus.Nome +
+            "\nCPF: " + vendedorVorus.CPF + "\nSalário: " + vendedorVorus.Salario +
+            "\nBonificação: " + vendedorVorus.Bonificacao +
+            "\nDias de férias: " + vendedorVorus.CalcularFerias() +
+            "\nRemuneração total: " + vendedorVorus.RemuneracaoTotal(vendedorVorus.Salario, vendedorVorus.Bonificacao));
 
-            Console.WriteLine("\nTransferir R$650,00 da conta da Kiki para a conta do Thúlio Balbuena Dionísio.");
-            contaDaKiki.Transferir(650, contaDoThulioBalbuenaDionisio);
-            Console.WriteLine("O saldo da conta da Kiki é: " + contaDaKiki.Saldo);
-            Console.WriteLine("O saldo da conta do Thúlio Balbuena Dionísio é: " + contaDoThulioBalbuenaDionisio.Saldo);
+            Console.WriteLine("\nGerente:\nNome: " + gerenteDexStarr.Nome +
+            "\nCPF: " + gerenteDexStarr.CPF + "\nSalário: " + gerenteDexStarr.Salario +
+            "\nBonificação: " + gerenteDexStarr.Bonificacao +
+            "\nDias de férias: " + gerenteDexStarr.CalcularFerias() +
+            "\nRemuneração total: " + gerenteDexStarr.RemuneracaoTotal(gerenteDexStarr.Salario));
 
-            Console.WriteLine("\nO número de contas criadas é: " + ContaCorrente.TotaldeContasCriadas);
+            Console.WriteLine("\nContas criadas: " + ContaCorrente.TotaldeContasCriadas);
         }
     }
 }

@@ -16,7 +16,6 @@ public class Gerente : Funcionario
 
     public override int CalcularFerias()
     {
-        int dias_ferias = 30 + NumeroDeAgencias * 5;
-        return dias_ferias;
+        return 30 + NumeroDeAgencias * 5;
     }
 }

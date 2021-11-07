@@ -16,7 +16,6 @@ public class Vendedor : Funcionario
 
     public override int CalcularFerias()
     {
-        int dias_ferias = 20 + NumeroClientesAtendidos * 1;
-        return dias_ferias;
+        return 30 + NumeroClientesAtendidos * 1;
     }
 }
